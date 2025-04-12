@@ -5,15 +5,13 @@ public class Deck {
 
   public Deck() {
     String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+
     for (String suit : suits) {
-      for (int i = 1; i <= 10; i++) {
+      for (int i = 1; i <= 13; i++) {
         cards.add(new Card(suit, i));
-        if (i == 10) { // Face cards
-          cards.add(new Card(suit, 10));
-          cards.add(new Card(suit, 10));
-        }
       }
     }
+
     Collections.shuffle(cards);
   }
 

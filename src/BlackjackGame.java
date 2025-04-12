@@ -1,7 +1,7 @@
 public class BlackjackGame {
-  private final Deck deck = new Deck();
-  private final Player player = new Player();
-  private final Dealer dealer = new Dealer();
+  private Deck deck = new Deck();
+  private Player player = new Player();
+  private Dealer dealer = new Dealer();
 
   public BlackjackGame() {
     player.addCard(deck.drawCard());
@@ -29,6 +29,17 @@ public class BlackjackGame {
   public String getDealerVisibleCardString() {
     return dealer.getHand().get(0).toString();
   }
+  public void reset() {
+    this.deck = new Deck();
+    this.player = new Player();
+    this.dealer = new Dealer();
+    // 发新牌
+    player.addCard(deck.drawCard());
+    player.addCard(deck.drawCard());
+    dealer.addCard(deck.drawCard());
+    dealer.addCard(deck.drawCard());
+  }
+
 
   public int[] getPlayerState() {
     int[] val = player.getHandValue();

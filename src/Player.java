@@ -15,8 +15,9 @@ public class Player {
     int sum = 0;
     int aceCount = 0;
     for (Card c : hand) {
-      if (c.getValue() == 1) aceCount++;
-      sum += c.getValue();
+      int val = c.getGameValue();
+      if (val == 1) aceCount++;
+      sum += val;
     }
     boolean usableAce = aceCount > 0 && sum + 10 <= 21;
     return new int[]{usableAce ? sum + 10 : sum, usableAce ? 1 : 0};

@@ -1,0 +1,28 @@
+# === Python virtual environments ===
+venv/
+.venv/
+env/
+ENV/
+
+# === Bytecode cache ===
+__pycache__/
+*.py[cod]
+
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+*.iws
+workspace.xml
+shelf/
+
+# === Java build output ===
+out/
+build/
+target/
+
+# === Log files ===
+*.log
+
+# === System files ===
+.DS_Store
+Thumbs.db
