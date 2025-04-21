@@ -79,4 +79,8 @@ public class Card {
   public String getImagePath() {
     return "assets/cards/" + getImageFileName();
   }
+
+  public Object getSuit() {
+    return suit;
+  }
 }
