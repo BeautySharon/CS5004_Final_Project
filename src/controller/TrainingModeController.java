@@ -94,7 +94,7 @@ public class TrainingModeController {
    *
    * @param action the player's chosen action ("Hit" or "Stand")
    */
-  private void makeMove(String action) {
+  void makeMove(String action) {
     String ai = aiAdvisor.getOptimalAction(initialState[0], initialState[1], initialState[2]);
 
     if (ai.equals("Unknown")) {
