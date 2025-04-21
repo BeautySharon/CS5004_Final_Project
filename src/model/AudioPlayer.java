@@ -28,7 +28,7 @@ public class AudioPlayer {
       clip.open(audioStream);
       clip.loop(Clip.LOOP_CONTINUOUSLY); // Loop playback
     } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-      System.err.println("音乐播放失败: " + e.getMessage());
+      System.err.println("Failed to play music: " + e.getMessage());
     }
   }
 
