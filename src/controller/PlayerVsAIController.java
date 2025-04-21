@@ -194,4 +194,8 @@ public class PlayerVsAIController {
     view.dispose();
     new MainMenu().setVisible(true);
   }
+
+  public BlackjackGame getGame() {
+    return game;
+  }
 }
