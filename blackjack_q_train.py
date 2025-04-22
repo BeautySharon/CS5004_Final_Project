@@ -7,7 +7,7 @@ ACTIONS = ['hit', 'stand']
 DECK = [1,2,3,4,5,6,7,8,9,10,10,10,10]  # 1 is Ace, 10 includes face cards
 
 # Parameters
-EPISODES = 500000
+EPISODES = 100000000  # number of training episodes
 ALPHA = 0.1       # learning rate
 GAMMA = 0.9       # discount factor
 EPSILON = 0.1     # exploration rate

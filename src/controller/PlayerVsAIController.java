@@ -101,16 +101,19 @@ public class PlayerVsAIController {
   }
 
   /**
-   * Handles AI's decision making using Q-table, recursively hits if needed.
+   * Handles AI's decision-making using Q-table, recursively hits if needed.
    * Uses a timer to simulate AI thinking delay.
+   */
+  /**
+   * Handles AI's decision using standard Blackjack dealer rules:
+   * Dealer hits if score < 17, otherwise stands.
    */
   private void handleAIMove() {
     Timer aiTimer = new Timer(1200, null);
     aiTimer.addActionListener(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        int[] state = game.getOpponentState();
-        String action = aiAdvisor.getOptimalAction(state[0], state[1], state[2]);
-        if (action.equals("Hit")) {
+        int dealerScore = game.getDealer().calculateScore();
+        if (dealerScore < 17) {
           game.opponentHit();
           GamePanelBuilder.updatePanel(game.getDealer().getHand(), view.aiPanel);
           if (game.getDealer().isBusted()) {
