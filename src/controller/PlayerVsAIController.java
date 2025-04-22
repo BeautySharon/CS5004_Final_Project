@@ -65,8 +65,6 @@ public class PlayerVsAIController {
    */
   private void revealCards() {
     view.revealButton.setEnabled(false);
-    view.hitButton.setEnabled(true);
-    view.standButton.setEnabled(true);
 
     GamePanelBuilder.updatePanel(game.getPlayer().getHand(), view.playerPanel);
 
@@ -76,8 +74,17 @@ public class PlayerVsAIController {
     view.aiPanel.revalidate();
     view.aiPanel.repaint();
 
-    view.statusLabel.setText("Your Turn: Hit or Stand");
+    int playerScore = game.getPlayer().calculateScore();
+
+    if (playerScore == 21) {
+      endRound("Blackjack! You win. 🎉");
+    } else {
+      view.hitButton.setEnabled(true);
+      view.standButton.setEnabled(true);
+      view.statusLabel.setText("Your Turn: Hit or Stand");
+    }
   }
+
 
   /**
    * Performs a "Hit" action for the player, and ends the round if player busts.
